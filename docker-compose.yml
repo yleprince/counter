@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  counter-api:
+    build: .
+    container_name: counter-api
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+    volumes:
+      - ./counters.json:/app/counters.json
+    restart: unless-stopped
+
